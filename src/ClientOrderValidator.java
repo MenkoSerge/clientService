@@ -3,25 +3,41 @@ public class ClientOrderValidator {
         checkAll();
     }
     static void checkAll(){
-        checkCityRegister();
-        checkMarrige();
-        checkChildren();
-        checkClient();
+        ClientOrder clientOrder = readClientOrder ();
 
+        AnswerCityRegistrer cityAnswer = checkCityRegister(clientOrder);
+        AnswerMarrige answerMarrige = checkMarrige(clientOrder);
+        AnswerChildren answerChildren = checkChildren(clientOrder);
+        AnswerClient answerClient = checkClient(clientOrder);
+
+
+        sendMail(clientOrder);
+    }
+
+     static void sendMail(ClientOrder clientOrder) {
+        System.out.println("Sending mail...");
+    }
+
+    static ClientOrder readClientOrder() {
+        ClientOrder clientOrder = new ClientOrder();
+        return clientOrder;
     }
 
 
-
-    static void checkCityRegister(){
+    static AnswerCityRegistrer checkCityRegister(ClientOrder clientOrder){
         System.out.println("Checking city register...");
+        return  new AnswerCityRegistrer();
     }
-    static void checkMarrige(){
+    static AnswerMarrige checkMarrige(ClientOrder clientOrder){
         System.out.println("Checking Marrie...");
+        return new AnswerMarrige();
     }
-    static void checkChildren(){
+    static AnswerChildren checkChildren(ClientOrder clientOrder){
         System.out.println("Checking Children...");
+        return new AnswerChildren();
     }
-    static void checkClient(){
+    static AnswerClient checkClient(ClientOrder clientOrder){
         System.out.println("Checking Client...");
+        return new AnswerClient();
     }
 }
