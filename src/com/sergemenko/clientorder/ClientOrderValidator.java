@@ -1,3 +1,12 @@
+package com.sergemenko.clientorder;
+
+import com.sergemenko.clientorder.domain.*;
+import com.sergemenko.clientorder.mail.MailSender;
+import com.sergemenko.clientorder.validator.ChildrenValidator;
+import com.sergemenko.clientorder.validator.CityRegisterValidator;
+import com.sergemenko.clientorder.validator.ClienValidator;
+import com.sergemenko.clientorder.validator.MarriageValidator;
+
 public class ClientOrderValidator {
     public static void main(String[] args) {
         checkAll();
